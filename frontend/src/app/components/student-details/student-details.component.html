@@ -1,0 +1,69 @@
+<div style="width: 500px; margin: auto;">
+    <div *ngIf="currentStudent" class="edit-form">
+      <h4>Update Student Detail</h4>
+      <div *ngIf = "showMsg" class="alert alert-success" role="alert">
+        {{message}}
+      </div>
+      <form>
+        <div class="form-group">
+          <label for="title">First Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="first_name"
+            [(ngModel)]="currentStudent.first_name"
+            name="first_name"
+          />
+        </div>
+        <div class="form-group">
+            <label for="title">Last Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="last_name"
+              [(ngModel)]="currentStudent.last_name"
+              name="last_name"
+            />
+          </div>
+        <div class="form-group">
+            <label for="name">Class</label>
+            <select class="form-control" id="class_id" [(ngModel)]="currentStudent.class_id" name="class_id">
+              <option 
+              *ngFor="let item of classes" [value]="item['id']"
+              [attr.selected]="currentStudent.class_id == item['id'] ? true : null"
+              >
+                  {{item['name']}}
+                </option>
+          </select>
+          </div>  
+         <div class="form-group">
+          <label for="description">Date of Birth</label>
+          <input
+            class="form-control"
+            id="date_of_birth"
+            required
+            [(ngModel)]="currentStudent.date_of_birth"
+            name="date_of_birth"
+          />
+        </div>
+      </form>
+      <button class="badge badge-danger mr-2" (click)="deleteStudent()">
+        Delete
+      </button>
+  
+      <button
+        type="submit"
+        class="badge badge-success"
+        (click)="updateStudent()"
+      >
+        Update
+      </button>
+      <p></p>
+    </div>
+  
+    <div *ngIf="!currentStudent">
+      <br />
+      <p>This student detail is not accessible</p>
+    </div>
+  </div>
+  

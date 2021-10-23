@@ -1,0 +1,63 @@
+<div style="width: 500px; margin: auto;">
+    <div class="submit-form">
+      <div *ngIf="errors" class="alert alert-danger" role="alert">
+        <div *ngFor="let error of errors">{{error}}</div>
+      </div>
+      <div *ngIf="!submitted">
+        <div class="form-group">
+          <label for="name">First Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="first_name"
+            placeholder="First Name"
+            required
+            [(ngModel)]="student.first_name"
+            name="first_name"
+          />
+        </div>
+        <div class="form-group">
+            <label for="name">Last Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="last_name"
+              placeholder="Last Name"
+              required
+              [(ngModel)]="student.last_name"
+              name="last_name"
+            />
+          </div>
+          <div class="form-group">
+            <label for="name">Class</label>
+            <select class="form-control" id="class_id" [(ngModel)]="student.class_id" name="class_id">
+                <option *ngFor="let item of classes" [value]="item['id']">
+                    {{item['name']}}
+                  </option>
+            </select>
+          </div>  
+         <div class="form-group">
+          <label for="description">Date of Birth</label>
+          <input
+            class="form-control"
+            id="date_of_birth"
+            placeholder="YYYY-mm-dd"
+            required
+            [(ngModel)]="student.date_of_birth"
+            name="date_of_birth"
+          />
+        </div>
+  
+        <button (click)="createStudent()" class="btn btn-success">Add Student</button>
+      </div>
+  
+      <div *ngIf="submitted">
+        <div class="alert alert-success">You successfully added a student!</div>
+        <button class="btn btn-success" (click)="newStudent()">Add New Student</button>
+        &nbsp;
+        <button class="btn btn-success" (click)="router.navigate(['/students']);">View All Students</button>
+      </div>
+    </div>
+  </div>
+  
+  

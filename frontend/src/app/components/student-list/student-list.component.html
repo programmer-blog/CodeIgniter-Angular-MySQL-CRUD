@@ -1,0 +1,50 @@
+<div class="list row">
+    <div class="col-md-8">
+      <!-- -->
+    </div>
+    <div class="col-md-6">
+      <h4>Students List</h4>
+      <ul class="list-group">
+        <li
+          class="list-group-item"
+          *ngFor="let item of studnets; let i = index"
+          [class.active]="i == currentIndex"
+          (click)="setCurrentStudent(item, i)"
+        > {{i+1}} - {{item.first_name}} {{item.last_name}}
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-6">
+      <div *ngIf="currentStudent">
+        <h4>Student Details</h4>
+        <div>
+          <label><strong>First Name:</strong></label> 
+            {{currentStudent.first_name}}
+        </div>
+        <div>
+            <label><strong>Last Name:</strong></label> 
+            {{currentStudent.last_name}}
+        </div>
+        <div>
+            <label><strong>Class:</strong></label> 
+            {{currentStudent.class_name}}
+        </div>
+        <div>
+            <label><strong>Date Of Birth:</strong></label>
+            {{currentStudent.date_of_birth}}
+          </div>
+        
+        <br />
+        <a class="badge badge-warning" routerLink="/students/{{currentStudent.id}}">
+          Edit Student
+        </a>
+      </div>
+  
+      <div *ngIf="!currentStudent">
+        <br />
+        <p>Please click on a student name</p>
+      </div>
+    </div>
+  </div>
+  
+  

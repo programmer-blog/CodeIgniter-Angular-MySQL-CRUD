@@ -1,0 +1,75 @@
+<div style="width: 500px; margin: auto;">
+    <div *ngIf="currentClass" class="edit-form">
+      <h4>Update Class Detail</h4>
+      <div *ngIf = "showMsg" class="alert alert-success" role="alert">
+        {{message}}
+      </div>
+      <form>
+        <div class="form-group">
+          <label for="title">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            [(ngModel)]="currentClass.name"
+            name="name"
+          />
+        </div>
+        <div class="form-group">
+            <label for="title">Code</label>
+            <input
+              type="text"
+              class="form-control"
+              id="code"
+              [(ngModel)]="currentClass.code"
+              name="code"
+            />
+        </div>
+        <div class="form-group">
+            <label for="title">Maximum Students</label>
+            <input
+              type="text"
+              class="form-control"
+              id="maximum_students"
+              [(ngModel)]="currentClass.maximum_students"
+              name="maximum_students"
+            />
+        </div>
+        <div class="form-group">
+            <label for="title">Status</label>
+            <select class="form-control" id="status" name="status" [(ngModel)]="currentClass.status">
+                <option value="opened">Opened</option>
+                <option value="closed">Closed</option>
+            </select>
+        </div>
+        <div class="form-group">
+          <label for="description">Description</label>
+          <input
+            type="text"
+            class="form-control"
+            id="description"
+            [(ngModel)]="currentClass.description"
+            name="description"
+          />
+        </div>
+      </form>
+      <button class="badge badge-danger mr-2" (click)="deleteClass()">
+        Delete
+      </button>
+  
+      <button
+        type="submit"
+        class="badge badge-success"
+        (click)="updateClass()"
+      >
+        Update
+      </button>
+      <p></p>
+    </div>
+  
+    <div *ngIf="!currentClass">
+      <br />
+      <p>This class detail is not accessible</p>
+    </div>
+  </div>
+  

@@ -1,0 +1,71 @@
+<div style="width: 500px; margin: auto;">
+    <div class="submit-form">
+      <div *ngIf="errors" class="alert alert-danger" role="alert">
+        <div *ngFor="let error of errors">{{error}}</div>
+      </div>
+      <div *ngIf="!submitted">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            required
+            [(ngModel)]="class.name"
+            name="name"
+          />
+        </div>
+        <div class="form-group">
+            <label for="name">Code</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              required
+              [(ngModel)]="class.code"
+              name="name"
+            />
+          </div>
+          <div class="form-group">
+            <label for="name">Maximum Students</label>
+            <input
+              type="number"
+              class="form-control"
+              id="maximum_students"
+              required
+              [(ngModel)]="class.maximum_students"
+              name="maximum_students"
+            />
+          </div>
+          <div class="form-group">
+            <label for="name">Status</label>
+            <select class="form-control" id="status" [(ngModel)]="class.status" name="status">
+                <option value="opened">Opened</option>
+                <option value="closed">Closed</option>
+            </select>
+          </div>
+  
+        <div class="form-group">
+          <label for="description">Description</label>
+          <input
+            class="form-control"
+            id="description"
+            required
+            [(ngModel)]="class.description"
+            name="description"
+          />
+        </div>
+  
+        <button (click)="createClass()" class="btn btn-success">Add Class</button>
+      </div>
+  
+      <div *ngIf="submitted">
+        <div class="alert alert-success">You successfully added a class!</div>
+        <button class="btn btn-success" (click)="newClass()">Add New Class</button>
+        &nbsp;
+        <button class="btn btn-success" (click)="router.navigate(['/classes']);">View All Classes</button>
+      </div>
+    </div>
+  </div>
+  
+  
