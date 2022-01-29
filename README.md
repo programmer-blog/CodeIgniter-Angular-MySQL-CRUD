@@ -1,8 +1,6 @@
 # Programmer Blog
 
-Repository for Tutorial 
-
-# Angular tutorial with CodeIgniter and MySQL
+## Angular tutorial with CodeIgniter and MySQL
 
 Following steps are performed in this tutorial
 
