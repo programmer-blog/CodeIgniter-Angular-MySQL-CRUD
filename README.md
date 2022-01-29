@@ -1,4 +1,4 @@
-# CodeIgniter-Angular-MySQL-CRUD
+# Programmer Blog
 
 Repository for Tutorial 
 
