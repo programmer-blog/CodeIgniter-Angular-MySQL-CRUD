@@ -1,6 +1,6 @@
 ## Programmer Blog
 
-## Angular tutorial with CodeIgniter and MySQL
+## Angular tutorial with CodeIgniter RESTful API and MySQL
 
 Following steps are performed in this tutorial
 
@@ -13,4 +13,4 @@ Following steps are performed in this tutorial
 
 Read detaild tutorial at: https://programmerblog.net/angular-tutorial-with-codeigniter-restful-api-part-1/
 
-Read more detaild tutorials at: http://programmblog.net
+Read more tutorials at: http://programmblog.net
